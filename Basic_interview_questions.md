@@ -60,7 +60,7 @@
 
 ## 4. Feature Importance
 **Q:** What is feature importance?  
-**A:** A measure of how much each feature contributes to the predictive power of a model.
+**A:** A measure of how much each feature contributes to the predictive power of a model. It tells what features are important for the training.
 
 **Methods:**  
 - Model-based importance (RandomForest, XGBoost)  
@@ -134,7 +134,7 @@
 **A:** Change in feature distributions compared to training data.
 
 **Q:** What is model drift?  
-**A:** Decrease in performance due to changes in data patterns.
+**A:** Decrease in performance of model due to changes in data patterns. Decrease in the model performance metrics.
 
 **Detection:**  
 - Accuracy monitoring  
@@ -197,28 +197,23 @@
 ---
 
 ### 11.5 What is an Outlier?
-**A:** A data point that deviates significantly from others.  
+**A:** Data points that are too deviated from the usual data distribution. Anomalous records in datasets that may skew model results.  
 **Detection:** Z-score, IQR, Isolation Forest.
 
 ---
 
-### 11.6 Data Outlier
-**A:** Anomalous records in datasets that may skew model results.
-
----
-
-### 11.7 Handling Null Values
+### 11.6 Handling Null Values
 **Steps:**  
 1. Check % of missing data  
 2. Impute (mean/median/mode, KNN)  
-3. Drop if low frequency and safe to remove  
+3. Drop nulls if low frequency and safe to remove  
 
 ---
 
-### 11.8 How Big is Your Dataset?
+### 11.7 How Big is Your Dataset?
 **Categories:**  
-- **Small (<1 GB):** pandas in-memory  
-- **Medium (1–100 GB):** Spark  
-- **Large (>100 GB):** Distributed cloud systems  
+- **Small (<1 GB):** pandas in-memory  - below 1 million samples - (no. of columns also matters)
+- **Medium (1–100 GB):** Spark  - 1 to 10 million samples (no. of columns also matters)
+- **Large (>100 GB):** Distributed cloud systems  - more than 10 million samples (no. of columns also matters)
 
 ---
